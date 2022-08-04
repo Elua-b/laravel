@@ -57,12 +57,32 @@
 
           <!-- Modal body -->
           <div class="modal-body">
-            Modal body..
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            
+            
+            <!-- Modal footer -->
+            <form action="" id="form">
+              <div class="form-group">
+                <label for="">Course_Name</label>
+                <input type="text" class="form-control"  id='Course_Name' name="Course_Name">
+              </div>
+              <div class="form-group">
+                <label for="">Teacher_Name</label>
+                <input type="text" class="form-control"  id='Teacher_Name' name="Course_Name">
+              </div>
+              <div class="form-group">
+                <label for="">Batch_Time</label>
+                <input type="text" class="form-control"  id='Batch_Time' name="Batch_Time">
+              </div>
+              <div class="form-group">
+                <label for="">Teaching_Day</label>
+                <input type="text" class="form-control"  id='Teaching_Day' name="Teaching_Day">
+              </div>
+              <div class="form-group">
+                
+                <input type="submit" class="form-control btn btn-success" value="Add Course"  id='submit' name="submit">
+              </div>
+              
+            </form>            
           </div>
 
         </div>
