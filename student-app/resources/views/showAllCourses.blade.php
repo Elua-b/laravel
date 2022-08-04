@@ -13,14 +13,14 @@
 
 <body>
 
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center ">
     <h1>Add new Course</h1>
     <div class="float-right">
       <a href="" class=" btn btn-success" data-toggle="modal" data-target="#myModal">Add Course</a>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-2">
         <div class="list-group">
