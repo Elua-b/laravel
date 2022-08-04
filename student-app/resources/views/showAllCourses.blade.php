@@ -18,6 +18,20 @@
 </div>
   
 <div class="container">
+  
+<table class="table">
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>Course_Name</td>
+      <td>Teacher_Name</td>
+      <td>Batch_Time</td>
+      <td>Teaching_Day</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+  </thead>
+</table>
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
