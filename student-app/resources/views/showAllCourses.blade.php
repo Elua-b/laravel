@@ -49,7 +49,7 @@
               <td>{{$c->Teacher_Name}}</td>
               <td>{{$c->Batch_Time}}</td>
               <td>{{$c->Teaching_Day}}</td>
-              <td>Edit</td>
+              <td> <a href="javascript:void(0)" class="btn btn-warning showEditModal">EDit</a> </td>
               <td>
                 <form action="course/{{$c->id}}" method="post">
                   @method('DELETE')
@@ -110,7 +110,11 @@
     </div>
 
   </div>
-
+<script>
+  $('.showEditModal').click(function(){
+    $('#myModal').modal('show');
+  })
+</script>
 </body>
 
 </html>
