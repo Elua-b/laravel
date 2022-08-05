@@ -9,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popple.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
         </div>
       </div>
       <div class="col-10">
-        <table class="table">
+        <table class="table" id="myTable">
           <thead>
             <tr>
               <td>id</td>
@@ -111,6 +113,9 @@
 
   </div>
 <script>
+  $(document).ready(function(){
+    $('#myTable').DataTable();
+  })
   $('.showEditModal').click(function(e){
 
     Teaching_Day=e.target.parentElement.previousElementSibling.innerText
