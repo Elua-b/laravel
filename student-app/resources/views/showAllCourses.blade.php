@@ -41,6 +41,19 @@
               <td>Delete</td>
             </tr>
           </thead>
+          <tbody>
+            @foreach($courses as $c)
+            <tr>
+              <td>{{$c->id}}</td>
+              <td>{{$c->Course_Name}}</td>
+              <td>{{$c->Teacher_Name}}</td>
+              <td>{{$c->Batch_Time}}</td>
+              <td>{{$c->Teaching_Day}}</td>
+              <td>Edit</td>
+              <td>Delete</td>
+            </tr>
+            @endforeach
+          </tbody>
         </table>
       </div>
     </div>
@@ -51,7 +64,7 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Modal Heading</h4>
+            <h4 class="modal-title">Add Course</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
