@@ -76,7 +76,14 @@ class courseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $course=courseModel::find($id);
+        $course->Course_Name=$request->Course_Name;
+        $course->Teacher_Name=$request->Teacher_Name;
+        $course->Batch_Time=$request->Batch_Time;
+        $course->Teaching_Day=$request->Teaching_Day;
+        $course->save();
+        return redirect('course');
     }
 
     /**

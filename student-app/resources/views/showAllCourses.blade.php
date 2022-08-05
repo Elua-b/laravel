@@ -126,6 +126,8 @@
     $('#Batch_Time').val(Batch_Time)
     $('#submit').val('Edit Course')
     $('.modal-title').text('Edit course')
+    $('form').attr('action','course/'+id)
+    $('form').append('<input type="hidden" name="_method" value="PUT">')        
       $('#myModal').modal('show');
   })
 </script>
