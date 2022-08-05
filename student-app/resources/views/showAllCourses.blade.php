@@ -50,7 +50,13 @@
               <td>{{$c->Batch_Time}}</td>
               <td>{{$c->Teaching_Day}}</td>
               <td>Edit</td>
-              <td>Delete</td>
+              <td>
+                <form action="course/{{$c->id}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+              </td>
             </tr>
             @endforeach
           </tbody>

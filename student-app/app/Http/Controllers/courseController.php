@@ -87,7 +87,9 @@ class courseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course=courseModel::find($id);
+        $course->delete();
+        return redirect('course');
     }
     
 }
