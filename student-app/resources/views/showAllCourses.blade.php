@@ -73,14 +73,15 @@
             
             
             <!-- Modal footer -->
-            <form action="" id="form">
+            <form action="course" method="POST" id="form">
+              @csrf
               <div class="form-group">
                 <label for="">Course_Name</label>
                 <input type="text" class="form-control"  id='Course_Name' name="Course_Name">
               </div>
               <div class="form-group">
                 <label for="">Teacher_Name</label>
-                <input type="text" class="form-control"  id='Teacher_Name' name="Course_Name">
+                <input type="text" class="form-control"  id='Teacher_Name' name="Teacher_Name">
               </div>
               <div class="form-group">
                 <label for="">Batch_Time</label>
