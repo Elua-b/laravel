@@ -49,7 +49,7 @@
               <td>{{$c->Teacher_Name}}</td>
               <td>{{$c->Batch_Time}}</td>
               <td>{{$c->Teaching_Day}}</td>
-              <td> <a href="javascript:void(0)" class="btn btn-warning showEditModal">EDit</a> </td>
+              <td> <a href="javascript:void(0)" class="btn btn-warning showEditModal">Edit</a> </td>
               <td>
                 <form action="course/{{$c->id}}" method="post">
                   @method('DELETE')
@@ -111,8 +111,20 @@
 
   </div>
 <script>
-  $('.showEditModal').click(function(){
+  $('.showEditModal').click(function(e){
+
+    Teaching_Day=e.target.parentElement.previousElementSibling.innerText
+    Batch_Time=e.target.parentElement.previousElementSibling.previousElementSibling.innerText
+    Teacher_Name=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText
+    Course_Name=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText
+    id=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText
     $('#myModal').modal('show');
+    
+    $('#Course_Name').val(Course_Name)
+    $('#Teaching_Day').val(Teaching_Day)
+    $('#Teacher_Name').val(Teacher_Name)
+    $('#Batch_Time').val(Batch_Time)
+      $('#myModal').modal('show');
   })
 </script>
 </body>
