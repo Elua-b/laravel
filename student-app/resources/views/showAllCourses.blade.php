@@ -124,6 +124,8 @@
     $('#Teaching_Day').val(Teaching_Day)
     $('#Teacher_Name').val(Teacher_Name)
     $('#Batch_Time').val(Batch_Time)
+    $('#submit').val('Edit Course')
+    $('.modal-title').text('Edit course')
       $('#myModal').modal('show');
   })
 </script>
