@@ -35,13 +35,13 @@ class courseController extends Controller
      */
     public function store(Request $request)
     {
-        $course=new courseModel;
+       $course=new courseModel;
         $course->Course_Name=$request->Course_Name;
         $course->Teacher_Name=$request->Teacher_Name;
         $course->Batch_Time=$request->Batch_Time;
         $course->Teaching_Day=$request->Teaching_Day;
         $course->save();
-        return redirect('course');
+        return redirect('course'); 
         
     }
 
