@@ -24,7 +24,12 @@
 
   <div class="container-fluid">
     <div class="row">
-      include('sidebar')
+      <div class="col-2">
+        <div class="list-group">
+          <a href="/course" class="list-group-item list-group-item-action">Courses </a>
+          <a href="/student" class="list-group-item list-group-item-action">Students</a>
+        </div>
+      </div>
       <div class="col-10">
         <table class="table" id="myTable">
           <thead>
