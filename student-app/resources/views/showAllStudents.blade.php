@@ -16,9 +16,9 @@
 <body>
 
   <div class="jumbotron text-center ">
-    <h1>Add new Course</h1>
+    <h1>Add new Student</h1>
     <div class="float-right">
-      <a href="" class=" btn btn-success" data-toggle="modal" data-target="#myModal">Add Course</a>
+      <a href="" class=" btn btn-success" data-toggle="modal" data-target="#myModal">Add Student</a>
     </div>
   </div>
 
@@ -35,25 +35,25 @@
           <thead>
             <tr>
               <td>id</td>
-              <td>Course_Name</td>
-              <td>Teacher_Name</td>
-              <td>Batch_Time</td>
-              <td>Teaching_Day</td>
+              <td>Name</td>
+              <td>Phone</td>
+              <td>Course_id</td>
+              
               <td>Edit</td>
               <td>Delete</td>
             </tr>
           </thead>
           <tbody>
-            @foreach($courses as $c)
+            @foreach($students as $c)
             <tr>
               <td>{{$c->id}}</td>
-              <td>{{$c->Course_Name}}</td>
-              <td>{{$c->Teacher_Name}}</td>
-              <td>{{$c->Batch_Time}}</td>
-              <td>{{$c->Teaching_Day}}</td>
+              <td>{{$c->name}}</td>
+              <td>{{$c->phone}}</td>
+              <td>{{$c->course_id}}</td>
+              
               <td> <a href="javascript:void(0)" class="btn btn-warning showEditModal">Edit</a> </td>
               <td>
-                <form action="course/{{$c->id}}" method="post">
+                <form action="student/{{$c->id}}" method="post">
                   @method('DELETE')
                   @csrf
                   <input type="submit" value="Delete" class="btn btn-danger">
@@ -72,7 +72,7 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Add Course</h4>
+            <h4 class="modal-title">Add Student</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
@@ -81,27 +81,24 @@
             
             
             <!-- Modal footer -->
-            <form action="course" method="POST" id="form">
+            <form action="student" method="POST" id="form">
               @csrf
               <div class="form-group">
-                <label for="">Course_Name</label>
-                <input type="text" class="form-control"  id='Course_Name' name="Course_Name">
+                <label for="">Name</label>
+                <input type="text" class="form-control"  id='name' name="name">
               </div>
               <div class="form-group">
-                <label for="">Teacher_Name</label>
-                <input type="text" class="form-control"  id='Teacher_Name' name="Teacher_Name">
+                <label for="">Phone</label>
+                <input type="tel" class="form-control"  id='phone' name="phone">
               </div>
               <div class="form-group">
-                <label for="">Batch_Time</label>
-                <input type="text" class="form-control"  id='Batch_Time' name="Batch_Time">
+                <label for="">Course_id</label>
+                <input type="number" class="form-control"  id='course_id' name="course_id">
               </div>
-              <div class="form-group">
-                <label for="">Teaching_Day</label>
-                <input type="text" class="form-control"  id='Teaching_Day' name="Teaching_Day">
-              </div>
+              
               <div class="form-group">
                 
-                <input type="submit" class="form-control btn btn-success" value="Add Course"  id='submit' name="submit">
+                <input type="submit" class="form-control btn btn-success" value="Add Student"  id='submit' name="submit">
               </div>
               
             </form>            
@@ -118,20 +115,20 @@
   })
   $('.showEditModal').click(function(e){
 
-    Teaching_Day=e.target.parentElement.previousElementSibling.innerText
-    Batch_Time=e.target.parentElement.previousElementSibling.previousElementSibling.innerText
-    Teacher_Name=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText
-    Course_Name=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText
-    id=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText
+    course_id=e.target.parentElement.previousElementSibling.innerText
+    phone=e.target.parentElement.previousElementSibling.previousElementSibling.innerText
+    name=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText
+    
+    id=e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText
     $('#myModal').modal('show');
     
-    $('#Course_Name').val(Course_Name)
-    $('#Teaching_Day').val(Teaching_Day)
-    $('#Teacher_Name').val(Teacher_Name)
-    $('#Batch_Time').val(Batch_Time)
-    $('#submit').val('Edit Course')
-    $('.modal-title').text('Edit course')
-    $('form').attr('action','course/'+id)
+    $('#name').val(name)
+    $('#phone').val(phone)
+    $('#course_id').val(course_id)
+   
+    $('#submit').val('Edit Student')
+    $('.modal-title').text('Edit Student')
+    $('form').attr('action','student/'+id)
     $('form').append('<input type="hidden" name="_method" value="PUT">')        
       $('#myModal').modal('show');
   })
