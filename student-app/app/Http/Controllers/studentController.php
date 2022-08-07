@@ -37,7 +37,13 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student=new studentsModel;
+        $student->name=$request->name;
+        $student->phone=$request->phone;
+        $student->course_id=$request->course_id;
+        
+        $student->save();
+        return redirect('student');
     }
 
     /**
@@ -71,7 +77,14 @@ class studentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student=studentsModel::find($id);
+        $student=new studentsModel;
+        $student->name=$request->name;
+        $student->phone=$request->phone;
+        $student->course_id=$request->course_id;
+        
+        $student->save();
+        return redirect('student');
     }
 
     /**
@@ -82,6 +95,8 @@ class studentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student=studentsModel::find($id);
+        $student->delete();
+        return redirect('student');
     }
 }
