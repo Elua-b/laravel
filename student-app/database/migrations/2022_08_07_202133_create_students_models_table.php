@@ -18,7 +18,7 @@ class CreateStudentsModelsTable extends Migration
             
             $table->string('name');
             $table->string('phone');
-            $table->string('course');
+            $table->unsignedInteger('course_id');
 
             $table->timestamps();
         });
